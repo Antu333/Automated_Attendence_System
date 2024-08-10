@@ -2,6 +2,9 @@ import cv2
 import pickle
 import numpy as np
 import os
+import time
+
+time.sleep(0.5)
 
 # Initialize video capture
 cap = cv2.VideoCapture(0)

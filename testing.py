@@ -55,17 +55,17 @@ while True:
         cv2.putText(frame, str(output[0]), (x,y-15), cv2.FONT_HERSHEY_COMPLEX, 1, (32,255,100), 1)
         cv2.rectangle(frame, (x_new, y_new), (x_new+w_new, y_new+h_new), (0,255,255),1)
         attendence = [str(output[0]), str(timestamp)]
-        exist = os.path.isfile("C:\\Users\\Antu Sanbui\\Desktop\\haarcascades\\face_recognition\\attendence" + date + ".csv")
+        exist = os.path.isfile("C:\\Users\\Antu Sanbui\\Desktop\project\\Automated_Attendence_System\\attendence" + date + ".csv")
     cv2.imshow("Frame", frame)
     
     if cv2.waitKey(1) & 0xFF == ord('o'):
         if exist:
-            with open("C:\\Users\\Antu Sanbui\\Desktop\\haarcascades\\face_recognition\\attendence" + date + ".csv", "+a") as csvfile:
+            with open("C:\\Users\\Antu Sanbui\\Desktop\project\\Automated_Attendence_System\\attendence" + date + ".csv", "+a") as csvfile:
                 writer = csv.writer(csvfile)
                 writer.writerow(attendence)
             csvfile.close()
         else:
-            with open("C:\\Users\\Antu Sanbui\\Desktop\\haarcascades\\face_recognition\\attendence" + date + ".csv", "+a") as csvfile:
+            with open("C:\\Users\\Antu Sanbui\\Desktop\project\\Automated_Attendence_System\\attendence" + date + ".csv", "+a") as csvfile:
                 writer = csv.writer(csvfile)
                 writer.writerow(COL_NAMES)
                 writer.writerow(attendence)
